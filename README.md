@@ -8,3 +8,6 @@ Android exercises of edX_GalileoX_CAAD002X_AADB
 3) ButterKnifeDemo[1,2]: Clicking on a button changes the display of a text view; 
    we do not use the ButterKnife Library (in ButterKnifeDemo_1) then we use it (in 
    ButterKnifeDemo_2)
+4) TipCalculator: calculates the tip amount to give to a waiter/waitress according 
+   to the value of his/her service; interesting app for building a Layout and using 
+   ButterKnife Zelezny.
