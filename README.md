@@ -11,3 +11,6 @@ Android exercises of edX_GalileoX_CAAD002X_AADB
 4) TipCalculator: calculates the tip amount to give to a waiter/waitress according 
    to the value of his/her service; interesting app for building a Layout and using 
    ButterKnife Zelezny.
+5) ContactList: the app of Lesson1. Very interesting for creating layouts and using
+   Intent to create an activity from another one. Use different string according to
+   different languages.
