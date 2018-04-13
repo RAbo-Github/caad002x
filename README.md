@@ -14,3 +14,4 @@ Android exercises of edX_GalileoX_CAAD002X_AADB
 5) ContactList: the app of Lesson1. Very interesting for creating layouts and using
    Intent to create an activity from another one. Use different string according to
    different languages.
+6) MaterialDesignExample: illustration of the use of Material Design in Android.
