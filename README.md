@@ -12,6 +12,6 @@ Android exercises of edX_GalileoX_CAAD002X_AADB
    to the value of his/her service; interesting app for building a Layout and using 
    ButterKnife Zelezny.
 5) ContactList: the app of Lesson1. Very interesting for creating layouts and using
-   Intent to create an activity from another one. Use different string according to
-   different languages.
+   Intent to create an activity from another one. Use different strings.xml according 
+   to different languages (English, French, Spanish, Italian, German).
 6) MaterialDesignExample: illustration of the use of Material Design in Android.
