@@ -8,4 +8,8 @@
     <string name="nav_now_playing">Now Playing</string>
     <string name="nav_upcoming">Upcoming</string>
     <string name="nav_logout">Logout</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="np_fragment">Now Playing fragment</string>
+    <string name="upcoming_fragment">Upcoming fragment</string>
 </resources>
