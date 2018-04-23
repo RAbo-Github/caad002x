@@ -12,4 +12,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="np_fragment">Now Playing fragment</string>
     <string name="upcoming_fragment">Upcoming fragment</string>
+    <string name="title_activity_movie_detail">MovieDetailActivity</string>
 </resources>
