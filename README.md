@@ -15,3 +15,4 @@ Android exercises of edX_GalileoX_CAAD002X_AADB
    Intent to create an activity from another one. Use different strings.xml according 
    to different languages (English, French, Spanish, Italian, German).
 6) MaterialDesignExample: illustration of the use of Material Design in Android.
+7) MovieManager: illustrates principles of Google's Material Design. Usage of ResyclerView.
