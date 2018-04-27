@@ -16,3 +16,5 @@ Android exercises of edX_GalileoX_CAAD002X_AADB
    to different languages (English, French, Spanish, Italian, German).
 6) MaterialDesignExample: illustration of the use of Material Design in Android.
 7) MovieManager: illustrates principles of Google's Material Design. Usage of ResyclerView.
+8) AddViewsDynamically: an app in which wee can add programatically some TextViews and 
+   changing the background color by clicking a button.
