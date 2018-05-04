@@ -18,3 +18,6 @@ Android exercises of edX_GalileoX_CAAD002X_AADB
 7) MovieManager: illustrates principles of Google's Material Design. Usage of ResyclerView.
 8) AddViewsDynamically: an app in which wee can add programatically some TextViews and 
    changing the background color by clicking a button.
+9) CustomViews: illustrates the fact that we can customize our views; taking the example 
+   of a button.
+
