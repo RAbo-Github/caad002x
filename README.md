@@ -22,3 +22,6 @@ Android exercises of edX_GalileoX_CAAD002X_AADB
    of a button.
 10) AsyncTaskExample: illustrates the communication between a Main Thread and a Background 
     Thread usind AsyncTask. This app also uses RecyclerView previously encountered.
+11) HandlerThread: communication between a Main Thread and a Background Thread using an
+    Handler. Handlers should be used when we deal with communications that last a long time.
+
