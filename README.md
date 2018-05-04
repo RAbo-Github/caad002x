@@ -20,4 +20,5 @@ Android exercises of edX_GalileoX_CAAD002X_AADB
    changing the background color by clicking a button.
 9) CustomViews: illustrates the fact that we can customize our views; taking the example 
    of a button.
-
+10) AsyncTaskExample: illustrates the communication between a Main Thread and a Background 
+    Thread usind AsyncTask. This app also uses RecyclerView previously encountered.
