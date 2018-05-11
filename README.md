@@ -26,4 +26,4 @@ Android exercises of edX_GalileoX_CAAD002X_AADB
     Handler. Handlers should be used when we deal with communications that last a long time.
 12) AsynTaskLoader: illustrates the use of a Loader through the simulation of a load of data
     from a database.
-
+13) AlarmManager: this app allows its user to be run at some points in the future.
