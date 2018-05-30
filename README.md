@@ -27,3 +27,6 @@ Android exercises of edX_GalileoX_CAAD002X_AADB
 12) AsynTaskLoader: illustrates the use of a Loader through the simulation of a load of data
     from a database.
 13) AlarmManager: this app allows its user to be run at some points in the future.
+14) HappyBirthdayApp: loads contact users and send them birthday messages. It uses a Loader
+    to get the user contacts (if permission is allowed) and send an email to the contact of
+    our choice determined by a click. 

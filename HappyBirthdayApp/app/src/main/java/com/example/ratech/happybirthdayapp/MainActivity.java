@@ -1,7 +1,6 @@
 package com.example.ratech.happybirthdayapp;
 
 import android.Manifest;
-import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -10,7 +9,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.LoaderManager;
@@ -31,13 +29,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private static final int READ_CONTACTS_PERMISSION_REQUEST = 1;
     private static final String DEBUG = "MainActivity";
     private static final int CONTACT_LOADER_ID = 90;
-    private static final int LOOKUP_KEY_INDEX = 0;
-    private static final int CONTACT_ID_INDEX = 1;
+    private static final int CONTACT_ID_INDEX = 0;
+    private static final int LOOKUP_KEY_INDEX = 1;
 
     private SimpleCursorAdapter adapter;
 
-    @TargetApi(Build.VERSION_CODES.M)
-    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,10 +77,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     private void getPermissionToReadUserContacts() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (checkSelfPermission(Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+            if(checkSelfPermission(Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED){
                 requestPermissions(new String[]{Manifest.permission.READ_CONTACTS}, READ_CONTACTS_PERMISSION_REQUEST);
                 return;
             } else {
@@ -97,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch(requestCode){
             case READ_CONTACTS_PERMISSION_REQUEST:{
-                if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
                     loadingContacts();
                 } else {
                     Log.d(DEBUG,"Permission denied");
@@ -107,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     private void loadingContacts() {
-        Log.d(DEBUG, "We have permission to log the context");
+        Log.d(DEBUG, "We have permission to load the contacts!");
         getSupportLoaderManager().initLoader(CONTACT_LOADER_ID, new Bundle(), contactsLoader);
     }
 
@@ -136,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private LoaderManager.LoaderCallbacks<Cursor> contactsLoader = new LoaderManager.LoaderCallbacks<Cursor>(){
 
         @Override
-        public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
+        public Loader<Cursor> onCreateLoader(int id, Bundle args) {
             String[] projectionFields = new String[]{
                     ContactsContract.Contacts._ID,
                         ContactsContract.Contacts.DISPLAY_NAME,
@@ -182,9 +177,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         String email = getEmail(mContactUri);
 
-        if (!email.equals("")) {
+        if(!email.equals(""))
             sendEmail(email, contactName);
-        }
     }
 
     private void sendEmail(String email, String contactName) {
@@ -216,7 +210,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         int emailIdx = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Email.DATA);
 
-        if (cursor.moveToFirst()){
+        if(cursor.moveToFirst()){
             email = cursor.getString(emailIdx);
         }
 
