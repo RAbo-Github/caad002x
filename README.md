@@ -30,3 +30,4 @@ Android exercises of edX_GalileoX_CAAD002X_AADB
 14) HappyBirthdayApp: loads contact users and send them birthday messages. It uses a Loader
     to get the user contacts (if permission is allowed) and send an email to the contact of
     our choice determined by a click. 
+15) LoadFromAssets: apps illustrating the use of files in Android.
