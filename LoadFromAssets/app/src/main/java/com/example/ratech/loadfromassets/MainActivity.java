@@ -59,10 +59,15 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected ArrayList<Pokemon> doInBackground(Void... voids) {
+
+            // Read json from disk (assets folder)
             String pokemonJson = loadJSONFromAsset(getApplicationContext(),"pokemonlist.json");
 
+            // Parson json using Google's Gson
             Gson gson = new Gson();
             Pokemon[] pokemon = gson.fromJson(pokemonJson, Pokemon[].class);
+
+            // Return the array list of Pokemons
             return new ArrayList<Pokemon>(Arrays.asList(pokemon));
         }
 
