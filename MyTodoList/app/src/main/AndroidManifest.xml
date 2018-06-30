@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:authorities="ratech.todolist"
+            android:exported="false"
+            android:name=".data.TodoListProvider"/>
     </application>
 
 </manifest>
