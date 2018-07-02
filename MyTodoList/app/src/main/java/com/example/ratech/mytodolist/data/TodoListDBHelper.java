@@ -17,6 +17,9 @@ public class TodoListDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
+
+        // Create a table to hold to-do.  A to-do is a task that need to be completed.
+
         final String SQL_CREATE_TODO_TABLE =
                 "CREATE TABLE "
                         + TodoListContract.TodoEntry.TABLE_NAME
