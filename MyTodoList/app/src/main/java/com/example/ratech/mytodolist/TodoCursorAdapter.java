@@ -13,15 +13,12 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 
 import com.example.ratech.mytodolist.data.TodoListContract;
-//import com.example.innovationlab.mytodolist.TodoCursorAdapter.ViewHolder;
-//import com.example.innovationlab.mytodolist.data.TodoListContract;
 
-
-
-
+/**
+ * Created by eonoe.
+ */
 
 public class TodoCursorAdapter extends RecyclerView.Adapter<TodoCursorAdapter.ViewHolder> {
-
     private Cursor                  cursor;
     private ToggleTodoCheckListener toggleCheckListener;
 
@@ -34,6 +31,7 @@ public class TodoCursorAdapter extends RecyclerView.Adapter<TodoCursorAdapter.Vi
             // The activity doesn't implement the interface, throw exception
             throw new ClassCastException(context.toString() + " must implement ToggleTodoCheckListener");
         }
+
     }
 
     @Override
@@ -59,7 +57,6 @@ public class TodoCursorAdapter extends RecyclerView.Adapter<TodoCursorAdapter.Vi
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-
         private TextView todoDescTextView;
         private CheckBox todoTaskCheckBox;
         private int todoTaskID = -1;
@@ -71,10 +68,9 @@ public class TodoCursorAdapter extends RecyclerView.Adapter<TodoCursorAdapter.Vi
         }
 
         private void bindView(Cursor cursor) {
-
             todoTaskID = cursor.getInt(cursor.getColumnIndex(TodoListContract.TodoEntry._ID));
             boolean isTaskDone = cursor.getInt(cursor.getColumnIndex(TodoListContract.TodoEntry.COLUMN_DONE)) == 1;
-            String description = cursor.getString(cursor.getColumnIndex(TodoListContract.TodoEntry.COLUMN_DESCRIPTION));
+            String description = cursor.getString(cursor.getColumnIndex(TodoListContract.TodoEntry.COLUMN_DESC));
             todoDescTextView.setText(description);
             toggleTask(isTaskDone);
             todoTaskCheckBox.setChecked(isTaskDone);
@@ -103,4 +99,5 @@ public class TodoCursorAdapter extends RecyclerView.Adapter<TodoCursorAdapter.Vi
     public interface ToggleTodoCheckListener {
         void onTodoItemChange(int todoID, boolean done);
     }
+
 }
