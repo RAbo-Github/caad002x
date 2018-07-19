@@ -33,3 +33,6 @@ Android exercises of edX_GalileoX_CAAD002X_AADB
 15) LoadFromAssets: apps illustrating the use of files in Android
 16) MyTodoList: apps that uses a SQLite database for managing a todo list. .
 17) PetShop: another app illustrating the use of SQLite.
+18) SharedPreferences: an app that permits to convert a lenght according several
+    lenght unit. It records the unit the user has choosen during the last session.
+     
