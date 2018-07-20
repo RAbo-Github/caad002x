@@ -20,7 +20,6 @@ public final class ShopContract {
     *
     * */
 
-
     // Content Authority
     //public static final String CONTENT_AUTHORITY = "com.androidbeginnerspetshop.pets";
     public static final String CONTENT_AUTHORITY = "com.example.ratech.petshop.pets";
