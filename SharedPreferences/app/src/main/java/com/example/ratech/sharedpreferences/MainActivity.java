@@ -48,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        tvActualUnits.setText(getString(R.string.actual_units, getActualUnitsLabel()));
+        super.onResume();
+    }
+
+
     private void setDefaultText() {
         tvActualUnits.setText(getString(R.string.actual_units, getActualUnitsLabel()));
         etMeter.setText("");
@@ -61,8 +68,15 @@ public class MainActivity extends AppCompatActivity {
         return mSharedPreferences.getString("Label", "cm"); // "cm" default value
     }
 
+    private float getActualUnits() {
+        // Shared preferences
+        SharedPreferences mSharedPreferences = getSharedPreferences("ActualUnits", MODE_PRIVATE);
+        // Retrieve a value
+        return mSharedPreferences.getFloat("Unit", 100f); // 100f is a default value for cm
+    }
+
     private void Convert(float value) {
-        // Implement Later
+        tvResult.setText(getString(R.string.result, String.valueOf(value * getActualUnits())));
     }
 
 
