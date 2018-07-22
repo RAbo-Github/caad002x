@@ -1,5 +1,6 @@
 package com.example.ratech.sharedpreferences;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,9 +36,36 @@ public class Settings extends AppCompatActivity {
             rbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    setActualUnits(value, shortLabel);
                 }
             });
+            mRadioGroup.addView(rbutton);
+
+            // Selected
+            if (value == getActualUnits()) {
+                rbutton.setChecked(true);
+            }
         }
     }
+
+    private float getActualUnits() {
+        // Shared preferences
+        SharedPreferences mSharedPreferences = getSharedPreferences("ActualUnits", MODE_PRIVATE);
+        // Retrieve a value
+        return mSharedPreferences.getFloat("Unit", 100f); // 100f is a default value for cm
+    }
+
+    private void setActualUnits(float value, String shortLabel) {
+        // Shared preferences
+        SharedPreferences mSharedPreferences = getSharedPreferences("ActualUnits", MODE_PRIVATE);
+        SharedPreferences.Editor mEditor = mSharedPreferences.edit();
+        // Store values in Pairs (KEY, VALUE)
+        mEditor.putFloat("Unit", value);
+        mEditor.putString("Label", shortLabel);
+        // Apply the changes
+        mEditor.apply();
+
+    }
+
+
 }
