@@ -1,6 +1,7 @@
 package com.example.ratech.sharedpreferences;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -35,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
         // Sets the Toolbar to act as the ActionBar for this Activity window.
         setSupportActionBar(mToolbar);
 
+        // ByDefault
+        setDefaultText();
+
         bnConverter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,6 +46,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void setDefaultText() {
+        tvActualUnits.setText(getString(R.string.actual_units, getActualUnitsLabel()));
+        etMeter.setText("");
+        tvResult.setText(getString(R.string.result,"0"));
+    }
+
+    private String getActualUnitsLabel() {
+        // Shared preferences
+        SharedPreferences mSharedPreferences = getSharedPreferences("ActualUnits", MODE_PRIVATE);
+        // Retrieve a value
+        return mSharedPreferences.getString("Label", "cm"); // "cm" default value
     }
 
     private void Convert(float value) {
