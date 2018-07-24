@@ -35,4 +35,5 @@ Android exercises of edX_GalileoX_CAAD002X_AADB
 17) PetShop: another app illustrating the use of SQLite.
 18) SharedPreferences: an app that permits to convert a lenght according several
     lenght unit. It records the unit the user has choosen during the last session.
+19) WidgetExample: an example of designing and using a home-screen widget.
      
