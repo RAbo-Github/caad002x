@@ -1,10 +1,13 @@
 package com.example.ratech.mytodolist;
 
+import android.app.NotificationManager;
+import android.content.Context;
 import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.LoaderManager;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
@@ -70,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<C
         });
 
         getSupportLoaderManager().initLoader(0, null, this);
+
+        showNotification();
     }
 
     @Override
@@ -128,6 +133,21 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<C
                 Calendar.getInstance().getTimeInMillis()
         );
         return contentValues;
+    }
+
+
+    // the following is for L5_Chapter3_Notifications
+    public static final int NOTIFICATION_ID = 1;
+
+    private void showNotification() {
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(MainActivity.this)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentTitle(getString(R.string.app_name))
+                .setContentText("Notification success" );
+
+        NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        // NOTIFICATION_ID allows you to update the notification later on
+        mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
     }
 
 }
